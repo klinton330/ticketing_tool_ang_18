@@ -1,0 +1,17 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+section{
+    min-height: 100vh;
+}
+.main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
