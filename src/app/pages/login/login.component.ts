@@ -23,6 +23,7 @@ export class LoginComponent {
     alert("login called")
     this.masterService.login(this.loginObj).subscribe((data: any) => {
       if (data.result) {
+        localStorage.setItem('ticketUser',JSON.stringify(data.data))
         this.routerService.navigateByUrl('dashboard');
       } else {
         alert(data.message);
