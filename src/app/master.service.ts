@@ -45,5 +45,17 @@ export class MasterService {
   deletepCategoryById(id:number){
     return this.http.delete(`${this.apiUrl}DeleteParentCategory?id=${id}`)
   }
+  getChildCategory(){
+    return this.http.get(`${this.apiUrl}GetChildCategory`)
+  }
 
+  createNewChildCategory(obj:any){
+    return this.http.post(`${this.apiUrl}CreateChildCategory`,obj)
+  }
+  updateChildCategory(obj:any){
+    return this.http.put(`${this.apiUrl}UpdateChildCategory`,obj)
+  }
+  deleteChildCategoryById(id:number){
+    return this.http.delete(`${this.apiUrl}DeleteChildCategory?id=${id}`)
+  }
 }
