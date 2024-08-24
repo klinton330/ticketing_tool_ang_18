@@ -40,6 +40,10 @@ export const routes: Routes = [
       {
         path:'child-category',
         component:ChildCategoryComponent
+      },
+      {
+        path:'employee',
+        component:EmployeeComponent
       }
     ],
   },

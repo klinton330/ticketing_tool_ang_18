@@ -58,4 +58,23 @@ export class MasterService {
   deleteChildCategoryById(id:number){
     return this.http.delete(`${this.apiUrl}DeleteChildCategory?id=${id}`)
   }
+
+  getAllRoles() {
+    return this.http.get(`${this.apiUrl}GetAllRoles`)
+  }
+  getAllEmployee() {
+    return this.http.get(`${this.apiUrl}GetEmployees`)
+  }
+  createNewEmployee(obj:any){
+    return this.http.post(`${this.apiUrl}CreateEmployee`,obj)
+  }
+  updateEmployee(obj:any){
+    console.log(obj)
+    return this.http.put(`${this.apiUrl}UpdateEmployee`,obj)
+  }
+  deleteEmployee(id:number){
+    alert(id)
+    return this.http.delete(`${this.apiUrl}DeleteEmployee?id=${id}`)
+  }
+
 }
