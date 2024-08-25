@@ -1,1 +1,64 @@
-<p>new-ticket works!</p>
+<div class="row d-flex justify-content-center">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header bg-success">New Ticket</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4">
+            <label for="">Severity</label>
+            <select name="" id="" class="form-select" [(ngModel)]="newTicketObj.severity">
+              <option value="">Select Severity</option>
+              <option value="low">Low</option>
+              <option value="Medium">Medium</option>
+              <option  value="High">High</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="">Department</label>
+            <select name="" id="" class="form-select"  [(ngModel)]="newTicketObj.deptId">
+              <option value="">Select Department</option>
+              @for (item of deptList; track $index) {
+              <option [value]="item.deptId">{{ item.deptName }}</option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="">Parent Category</label>
+            <select name="" id="" class="form-select" [(ngModel)]="selectedParentCategory" (change)="onParenetCategoryChange()">
+              <option value="">Select Parent Category</option>
+              @for (item of parentCategoryList; track $index) {
+              <option [value]="item.categoryName">{{ item.categoryName}}</option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="">Child Category</label>
+            <select name="" id="" class="form-select" [(ngModel)]="newTicketObj.childCategoryId">
+              <option value="">Select Child Category</option>
+              @for (item of filterchildCategory; track $index) {
+              <option [value]="item.childCategoryId">{{ item.categoryName }}</option>
+              }
+            </select>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="">Request Details</label>
+              <textarea class="form-control" [(ngModel)]="newTicketObj.requestDetails"></textarea>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-6 text-center">
+          <button class="btn btn-success" (click)=" createNewTicket()">Create Ticket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,7 @@ export class ParentCategoryComponent {
     "categoryName": "",
     "deptId":""
   };
+  parentCategoryList: any[]=[];
   ngOnInit(): void {
     this.getAllGridData();
   }
@@ -39,6 +40,18 @@ export class ParentCategoryComponent {
       console.log(this.gridList);
     });
   }
+  getAllPcategory() {
+    this.masterService.getpCategory().subscribe({
+      next:(data:any)=>{
+        this.parentCategoryList=data.data;
+      },
+      error:(error:any)=>{
+        alert(error)
+      }
+      
+    })
+  }
+
 
   createParent() {
     console.log(this.newObj);

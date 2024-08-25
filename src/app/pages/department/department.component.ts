@@ -53,6 +53,7 @@ export class DepartmentComponent implements OnInit {
   }
 
   updateDept() {
+    console.log("Depar",this.newDept)
     this.masterService.updateDept(this.newDept).subscribe({
       next: (data: any) => {
         if (data.result) {
